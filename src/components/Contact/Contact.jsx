@@ -2,7 +2,7 @@ import { IoMdPerson } from "react-icons/io";
 import { MdLocalPhone } from "react-icons/md";
 import styles from "./Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContactThunk } from "../../redux/contactOps";
 
 const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const Contact = ({ name, number, id }) => {
           </a>
         </li>
       </ul>
-      <button onClick={() => dispatch(deleteContact(id))}>Delete</button>
+      <button onClick={() => dispatch(deleteContactThunk(id))}>Delete</button>
     </div>
   );
 };
